@@ -4,7 +4,7 @@
 
 If you're using a MacBook, your system is going to come bundled with Python3.  
 
-## Recommended setup
+## PyCharm setup
 
 I recommend setting up the project with `PyCharm`. I also recommend always using a _virtualenv_ in case you want to install a project specific package that you don't want to have system wide.
 
@@ -20,18 +20,28 @@ _If you want to create a virtualenv:_
 _If you don't want to create a virtualenv:_
 2b. Under `Preferences > Project: Python > Python Interpreter` choose the latest Python3 interpreter that your system has.
 
-## Running the tests
+### Running the tests
+
+Move your cursor to the test scope you want to run and hit `ctrl + shift + R`.
+
+## Commandline setup
+
+```bash
+> pip3 install virtualenv
+> virtualenv venv
+> . ./venv/bin/activate
+```
+
+### Running the tests
 
 Python3 should come bundled with unittest, so you should be all set. You can either run the tests from inside `PyCharm` or run them from the terminal with the following command:  
 
-If you're using a virtualenv:
-``` python
-. ./<virtualenv_name>/bin/activate
-python3 -m unittest kata_test.py
+``` bash
+> . ./venv/bin/activate
+> python -m unittest kata_test.py
 ```
 
-If you're _not_ using a virtualenv: 
-
-``` python
-python3 -m unittest kata_test.py
+Exiting virtualenv with:
+```bash
+> deactivate
 ```
